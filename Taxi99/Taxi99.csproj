@@ -6,6 +6,14 @@
     <Authors>Guilherme Gentile</Authors>
     <Product>Sharp99Taxi</Product>
     <PackageProjectUrl>https://github.com/Guigass/Sharp99Taxi/</PackageProjectUrl>
+    <Description>Sharp99Taxi é uma implementação da API da 99 Taxi Empresas em C# usando .NET Standard.
+
+Para começar a usar você primeiro precisa solicitar um Token junto a 99Taxi.
+
+A Documentação da API está em https://github.com/99taxis/corp-api-documentation</Description>
+    <Copyright>Guilherme Gentile</Copyright>
+    <RepositoryUrl>https://github.com/Guigass/Sharp99Taxi</RepositoryUrl>
+    <PackageTags>99taxi taxi 99</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

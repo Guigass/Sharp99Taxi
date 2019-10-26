@@ -8,7 +8,7 @@ A Documentação da API está em https://github.com/99taxis/corp-api-documentati
 
 ############################ WORK IN PROGRESS #####################################
 
-A Maioria dos metodos já estão implementados porem ainda sem testes, para usar é só seguir o exemplo a seguir.
+A Maioria dos metodos já estão implementados porem ainda sem testes, para usar é só seguir o exemplo abaixo.
 
 
             using (var service99 = new Services99(_apiToken))

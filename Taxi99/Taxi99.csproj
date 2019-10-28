@@ -14,6 +14,7 @@ A Documentação da API está em https://github.com/99taxis/corp-api-documentati
     <Copyright>Guilherme Gentile</Copyright>
     <RepositoryUrl>https://github.com/Guigass/Sharp99Taxi</RepositoryUrl>
     <PackageTags>99taxi taxi 99</PackageTags>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

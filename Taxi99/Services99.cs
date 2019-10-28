@@ -47,7 +47,13 @@ namespace Taxi99
 
         public async Task<ApiResponse<List<CostCenter>>> GetListCostCenter(string search = "", int page = 1, int limit = 10)
         {
-            var response = await _restService.Get<List<CostCenter>>($"costcenter", $"search={search}&page={page}&limit={limit}");
+            string query = "";
+
+            query += !string.IsNullOrEmpty(search) ? $"search={search}&" : "";
+            query += $"{page}&";
+            query += $"{limit}&";
+
+            var response = await _restService.Get<List<CostCenter>>($"costcenter", query);
 
             return response;
         }
@@ -113,8 +119,15 @@ namespace Taxi99
 
         public async Task<ApiResponse<List<Employee>>> GetListEmployee(string search = "", int page = 1, int limit = 10, int offset = 0, string nationalId = "")
         {
-            var response = await _restService.Get<List<Employee>>($"employee", 
-                $"search={search}&page={page}&limit={limit}&offset={offset}&nationalId={nationalId}");
+            string query = "";
+
+            query += !string.IsNullOrEmpty(search) ? $"search={search}&" : "";
+            query += !string.IsNullOrEmpty(nationalId) ? $"nationalId={nationalId}&" : "";
+            query += $"{page}&";
+            query += $"{limit}&";
+            query += $"{offset}&";
+
+            var response = await _restService.Get<List<Employee>>($"employee", query);
 
             return response;
         }
@@ -126,7 +139,7 @@ namespace Taxi99
             return response;
         }
 
-        public async Task<ApiResponse<List<RideEstimate>>> EstimateEmployeeRide(int employeeID, int fromLat, int fromLng, int toLat, int toLng)
+        public async Task<ApiResponse<List<RideEstimate>>> EstimateEmployeeRide(int employeeID, double fromLat, double fromLng, double toLat, double toLng)
         {
             var response = await _restService.Get<List<RideEstimate>>($"employee/{employeeID}/categories", 
                 $"employeeID={employeeID}&fromLat={fromLat}&fromLng={fromLng}&toLat={toLat}&toLng={toLng}");

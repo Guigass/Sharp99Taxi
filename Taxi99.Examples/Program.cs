@@ -1,7 +1,8 @@
 ﻿using System;
+using Taxi99;
 using Taxi99.Models;
 
-namespace Taxi99.Exemples
+namespace Taxi99.Examples
 {
     class Program
     {

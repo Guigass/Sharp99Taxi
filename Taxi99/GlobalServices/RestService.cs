@@ -71,6 +71,8 @@ namespace Taxi99.GlobalServices
 
                 var jsonResult = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+                apiResponse.Message = jsonResult;
+
                 try { apiResponse.Object = JsonConvert.DeserializeObject<T>(jsonResult); }
                 catch (Exception ex) { apiResponse.Exception = ex; }
             }
@@ -95,6 +97,8 @@ namespace Taxi99.GlobalServices
 
                 var jsonResult = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+                apiResponse.Message = jsonResult;
+
                 try { apiResponse.Object = JsonConvert.DeserializeObject<T>(jsonResult); }
                 catch (Exception ex) { apiResponse.Exception = ex; }
             }
@@ -117,7 +121,9 @@ namespace Taxi99.GlobalServices
                 apiResponse.Status = result.StatusCode.ToString();
                 apiResponse.IsSuccess = result.IsSuccessStatusCode;
 
-                apiResponse.Object = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var jsonResult = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+                apiResponse.Object = apiResponse.Message = jsonResult;
             }
             catch (Exception ex) { apiResponse.Exception = ex; }
 
